@@ -5,16 +5,17 @@ title: Тестовое задание
  <script type="text/javascript">
     $(function(){ 
             jQuery.getJSON('public/ajax/customers.json', {}, function(json){
-                 var html = '';
-                for(var i in json){
-                  html += '<tr><td><input type="checkbox" name=' + json[i].id + '></td>'
-                  html += '<td>' + json[i].lastname + '&nbsp;'+ json[i].firstname + '&nbsp;' + json[i].middlename + '</td>'
-                  html += '<td>' + json[i].email + '</td>'
-                  html += '<td>' + json[i].phone + '</td>'
-                  html += '<td>' + json[i].tin + '</td></tr>'
-                                   
+                var html = '';
+                for(var i in json){                  
+                  html += (!json[i].id) ? '<tr><td></td>' : '<tr><td><input type="checkbox" name=' + json[i].id + '></td>'
+                  html += (!json[i].lastname) ? '<td>' : '<td>' + json[i].lastname;
+                  html += (!json[i].firstname) ? '' : '&nbsp;'+ json[i].firstname;
+                  html += (!json[i].middlename) ? '</td>' : '&nbsp;'+ json[i].middlename + '</td>';
+                  html += (!json[i].email) ? '<td></td>' : '<td>' + json[i].email + '</td>'
+                  html += (!json[i].phone) ? '<td></td>' :'<td>' + json[i].phone + '</td>';
+                  html += (!json[i].tin) ? '<td></td></tr>' : '<td>' + json[i].tin + '</td></tr>';
                 }
-                $('table.allpayers tbody').html(html)
+                $('table.allpayers tbody').html(html);
             });                
     });
 </script> 

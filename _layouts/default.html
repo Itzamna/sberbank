@@ -7,26 +7,24 @@
   <link rel="stylesheet" href="public/css/style.css" type="text/css">                                                          
 </head>
 <body>
-<div id="wrapper">
-  <div id="header">
-    <div class="menu">
-      {% include menu.html %}
-    </div>
-    <ul class="sub-menu">
-      <li class="pull-right">  
-        <div class="search">
-          <form action="/search/" id="search">
-            <input type="text" name="txtName" value="Поиск">
-	        </form>
-        </div>
-      </li>
-      <li class="new-user"><input type="checkbox" name="n1" /><a href="#" class="button"><i>+</i> Создать плательщика</a></li>
-    </ul>
+<div id="header">
+  <div class="menu">
+    {% include menu.html %}
+  </div>
+  <ul class="sub-menu">
+    <li class="pull-right">  
+      <div class="search">
+        <form action="/search/" id="search">
+          <input type="text" name="txtName" value="Поиск">
+        </form>
+      </div>
+    </li>
+    <li class="new-user"><input type="checkbox" name="n1" /><a href="#" class="button"><i>+</i> Создать плательщика</a></li>
+  </ul>
 
-  </div>
-  <div class="payers">
-    {{ content }}
-  </div>
+</div>
+<div class="payers">
+  {{ content }}
 </div>
 </body>
 
