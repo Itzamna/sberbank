@@ -3,28 +3,37 @@ layout: default
 title: Тестовое задание
 ---
  <script type="text/javascript">
-    jQuery(document).ready(function(){ 
+    $(function(){ 
             jQuery.getJSON('public/ajax/customers.json', {}, function(json){
-                jQuery('table tr.payer').html('');
-                $('table tr.payer').append('<td><input type="checkbox" name=' + json[0].id + '></td>')
-                                .append('<td>' + json[0].lastname + '&nbsp;'+ json[0].firstname + '&nbsp;' + json[0].middlename + '</td>')
-                                .append('<td>' + json[0].email + '</td>')
-                                .append('<td>' + json[0].phone + '</td>')
-                                .append('<td>' + json[0].tin + '</td>');
+                 var html = '';
+                for(var i in json){
+                  html += '<tr><td><input type="checkbox" name=' + json[i].id + '></td>'
+                  html += '<td>' + json[i].lastname + '&nbsp;'+ json[i].firstname + '&nbsp;' + json[i].middlename + '</td>'
+                  html += '<td>' + json[i].email + '</td>'
+                  html += '<td>' + json[i].phone + '</td>'
+                  html += '<td>' + json[i].tin + '</td></tr>'
+                                   
+                }
+                $('table.allpayers tbody').html(html)
             });                
     });
 </script> 
-<h3>C JSON:</h3>  
-<table cellpadding="0" >
-  <tr>
-    <td></td>
-    <td>Плательщик</td>
-    <td>Электронная почта</td>
-    <td>Телефон</td>
-    <td>Группы</td>
-  </tr>
-  <tr class="payer"></tr>
+<h3>C JSON-массивом:</h3>  
+<table cellpadding="0" class="allpayers" >
+  <thead>
+    <tr>
+      <td></td>
+      <td>Плательщик</td>
+      <td>Электронная почта</td>
+      <td>Телефон</td>
+      <td>Группы</td>
+    </tr>
+  </thead>
+  <tbody>
+
+  </tbody>
 </table>
+
 <h3>Без JSON:</h3>
 <table cellpadding="0">
   <tr>

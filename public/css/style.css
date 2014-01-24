@@ -129,7 +129,7 @@ td{
   text-overflow: ellipsis;
   vertical-align: top;
 }
-tr:first-child td, td:last-child {
+thead tr:first-child td, td:last-child {
   color: rgb(173,163,154);
   font-size: 0.8em;
 }
