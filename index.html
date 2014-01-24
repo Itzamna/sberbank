@@ -5,18 +5,28 @@ title: Тестовое задание
  <script type="text/javascript">
     jQuery(document).ready(function(){ 
             jQuery.getJSON('public/ajax/customers.json', {}, function(json){
-                jQuery('table').html('');
-                jQuery('table').append('<td><input type="checkbox" name=' + json[0].id + '></td>')
+                jQuery('table tr.payer').html('');
+                $('table tr.payer').append('<td><input type="checkbox" name=' + json[0].id + '></td>')
                                 .append('<td>' + json[0].lastname + '&nbsp;'+ json[0].firstname + '&nbsp;' + json[0].middlename + '</td>')
                                 .append('<td>' + json[0].email + '</td>')
                                 .append('<td>' + json[0].phone + '</td>')
                                 .append('<td>' + json[0].tin + '</td>');
             });                
     });
-</script>   
-<div id="go">sadsddsdsds</div>
+</script> 
+<h3>C JSON:</h3>  
+<table cellpadding="0" >
+  <tr>
+    <td></td>
+    <td>Плательщик</td>
+    <td>Электронная почта</td>
+    <td>Телефон</td>
+    <td>Группы</td>
+  </tr>
+  <tr class="payer"></tr>
+</table>
+<h3>Без JSON:</h3>
 <table cellpadding="0">
-<col class="col1"><col class="col2"><col class="col3"><col class="col4"><col class="col5">
   <tr>
     <td></td>
     <td>Плательщик</td>
