@@ -25,12 +25,17 @@ a {
   box-shadow: 0 5px 2px -2px rgb(195,195,193);
 } 
 .menu {
+
   border-bottom: 1px solid rgb(202,203,208);
 }  
+
 ul.navigation, ul.sub-menu{
   margin: 0;
   padding: 20px 35px;
   list-style-type: none;
+  position: relative;
+  z-index:1;
+
 }
 ul.navigation li {
   display: inline;
@@ -44,13 +49,27 @@ ul.navigation li.active a {
   text-decoration:none;
   color: rgb(4,1,20);
 }
+.menu:after{
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 37px 244px 0 0;
+  border-color: #f2f2f4 transparent transparent transparent;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  content: ''; 
+  z-index:0;
+}
 .pull-right {
   float:right;
 }
 ul.sub-menu {
   margin-left:20px;
 }
-
+.pull-right a{
+  color: rgb(122,121,116);
+}
 a.button {
   text-decoration: none;
   text-align: center;
