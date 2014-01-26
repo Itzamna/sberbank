@@ -29,7 +29,6 @@ h3 {
   box-shadow: 0 5px 2px -2px rgb(195,195,193);
 } 
 .menu {
-
   border-bottom: 1px solid rgb(202,203,208);
 }  
 
@@ -39,7 +38,6 @@ ul.navigation, ul.sub-menu{
   list-style-type: none;
   position: relative;
   z-index:1;
-
 }
 ul.navigation li {
   display: inline;
@@ -66,7 +64,7 @@ ul.navigation li.active a {
   float:right;
 }
 ul.sub-menu {
-  margin-left:20px;
+  margin-left: 20px;
 }
 .pull-right a{
   color: rgb(122,121,116);
@@ -142,16 +140,13 @@ table td:nth-of-type(1) {
 table td:nth-of-type(2) {
  padding-left: 10px;
 }
-
-table td:nth-of-type(3) {
+table td:nth-of-type(3), table td:nth-of-type(5) {
   width:20%;
-  
 }
 table td:nth-of-type(4) {
   width:15%;
 }
 table td:nth-of-type(5) {
-  width:20%;
   white-space: normal;
 }
 

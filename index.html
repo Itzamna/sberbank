@@ -1,41 +1,7 @@
 ---
 layout: default
-title: Тестовое задание
+title: Тестовое задание. Данные внутри html
 ---
- <script type="text/javascript">
-    $(function(){ 
-            jQuery.getJSON('public/ajax/customers.json', {}, function(json){
-                var html = '';
-                for(var i in json){                  
-                  html += (!json[i].id) ? '<tr><td></td>' : '<tr><td><input type="checkbox" name=' + json[i].id + '></td>'
-                  html += (!json[i].lastname) ? '<td>' : '<td>' + json[i].lastname;
-                  html += (!json[i].firstname) ? '' : '&nbsp;'+ json[i].firstname;
-                  html += (!json[i].middlename) ? '</td>' : '&nbsp;'+ json[i].middlename + '</td>';
-                  html += (!json[i].email) ? '<td></td>' : '<td>' + json[i].email + '</td>'
-                  html += (!json[i].phone) ? '<td></td>' :'<td>' + json[i].phone + '</td>';
-                  html += (!json[i].tin) ? '<td></td></tr>' : '<td>' + json[i].tin + '</td></tr>';
-                }
-                $('table.allpayers tbody').html(html);
-            });                
-    });
-</script> 
-<h3>C JSON-массивом:</h3>  
-<table cellpadding="0" class="allpayers" >
-  <thead>
-    <tr>
-      <td></td>
-      <td>Плательщик</td>
-      <td>Электронная почта</td>
-      <td>Телефон</td>
-      <td>Группы</td>
-    </tr>
-  </thead>
-  <tbody>
-
-  </tbody>
-</table>
-
-<h3>Без JSON:</h3>
 <table cellpadding="0">
   <tr>
     <td></td>
